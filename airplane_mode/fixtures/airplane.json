@@ -1,0 +1,52 @@
+[
+ {
+  "airline": "IndiGo",
+  "capacity": 200,
+  "docstatus": 0,
+  "doctype": "Airplane",
+  "initial_audit_completed": 0,
+  "model": "IndiGo-001",
+  "modified": "2026-10-12 15:06:11.311172",
+  "name": "IndiGo-001"
+ },
+ {
+  "airline": "Air India",
+  "capacity": 100,
+  "docstatus": 0,
+  "doctype": "Airplane",
+  "initial_audit_completed": 1,
+  "model": "5001",
+  "modified": "2026-10-15 23:29:57.691737",
+  "name": "Airways-006"
+ },
+ {
+  "airline": "Goa",
+  "capacity": 400,
+  "docstatus": 0,
+  "doctype": "Airplane",
+  "initial_audit_completed": 0,
+  "model": "Goa-plane",
+  "modified": "2026-10-15 11:04:26.439439",
+  "name": "Goa-017"
+ },
+ {
+  "airline": "Air India",
+  "capacity": 500,
+  "docstatus": 0,
+  "doctype": "Airplane",
+  "initial_audit_completed": 0,
+  "model": "Airindia",
+  "modified": "2026-10-15 11:09:33.660822",
+  "name": "Air India-018"
+ },
+ {
+  "airline": "Air India",
+  "capacity": 206,
+  "docstatus": 0,
+  "doctype": "Airplane",
+  "initial_audit_completed": 1,
+  "model": "2026",
+  "modified": "2026-10-16 11:04:02.117482",
+  "name": "Air India-019"
+ }
+]

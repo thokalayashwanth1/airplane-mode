@@ -1,0 +1,32 @@
+[
+ {
+  "customer_care_number": "9188782839",
+  "docstatus": 0,
+  "doctype": "Airline",
+  "founding_year": 2006,
+  "headquarters": "Delhi",
+  "modified": "2026-10-15 22:26:21.503882",
+  "name": "IndiGo",
+  "website": "https://www.goindigo.in"
+ },
+ {
+  "customer_care_number": "5678976574",
+  "docstatus": 0,
+  "doctype": "Airline",
+  "founding_year": 2020,
+  "headquarters": "HYD",
+  "modified": "2026-10-12 16:42:54.758969",
+  "name": "Air India",
+  "website": null
+ },
+ {
+  "customer_care_number": "4657890765",
+  "docstatus": 0,
+  "doctype": "Airline",
+  "founding_year": 2030,
+  "headquarters": "Goa",
+  "modified": "2026-10-16 10:28:46.493185",
+  "name": "Goa",
+  "website": "https://www.gogoa.in"
+ }
+]

@@ -1,0 +1,27 @@
+{% set color = frappe.form_dict.get("color") or "black" %}
+{# Only plain colour names are accepted, anything else falls back to black #}
+{% if not color.isalpha() %}{% set color = "black" %}{% endif %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Me Colors</title>
+    <style>
+        body {
+            margin: 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        .color-rectangle {
+            width: 400px;
+            height: 200px;
+            background-color: {{ color }};
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h2>Show Me Colors</h2>
+    <div class="color-rectangle"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="/assets/airplane_mode/css/shops.css">
+</head>
+<body>
+	<nav>
+		<a href="/shops" class="brand"><span>Airport Shops</span></a>
+	</nav>
+
+	<main style="max-width:64em;margin:0 auto;padding:4.5em 1em 2em;">
+		<h1>{{ title }}</h1>
+		<p>Browse shops available at our airports.</p>
+
+		{% if shops %}
+		<div class="flex three-800 two-500">
+			{% for shop in shops %}
+			<div>
+				<article class="card">
+					<header>
+						<h3>{{ shop.shop_name }}</h3>
+						{% if shop.status == "Available" %}
+						<span class="label success">Available</span>
+						{% else %}
+						<span class="label warning">{{ shop.status }}</span>
+						{% endif %}
+					</header>
+					<section>
+						<p>Shop No. {{ shop.shop_number }}</p>
+						<p>{{ shop.airport }} &middot; {{ shop.shop_type }}</p>
+						<p>{{ shop.area_sq_ft }} sq ft</p>
+					</section>
+					<footer>
+						<a class="button" href="/shop-details?name={{ shop.name | urlencode }}">View details</a>
+					</footer>
+				</article>
+			</div>
+			{% endfor %}
+		</div>
+		{% else %}
+		<p>No shops are listed right now.</p>
+		{% endif %}
+	</main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="/assets/airplane_mode/css/shops.css">
+</head>
+<body>
+	<nav>
+		<a href="/shops" class="brand"><span>Airport Shops</span></a>
+		<div class="menu">
+			<a href="/shops" class="button pseudo">All shops</a>
+		</div>
+	</nav>
+
+	<main style="max-width:48em;margin:0 auto;padding:4.5em 1em 2em;">
+		<article class="card">
+			<header>
+				<h2>{{ shop.shop_name }}</h2>
+				{% if shop.status == "Available" %}
+				<span class="label success">Available</span>
+				{% else %}
+				<span class="label warning">{{ shop.status }}</span>
+				{% endif %}
+			</header>
+			<section>
+				<table>
+					<tr><th>Shop number</th><td>{{ shop.shop_number }}</td></tr>
+					<tr><th>Airport</th><td>{{ shop.airport }}</td></tr>
+					<tr><th>Type</th><td>{{ shop.shop_type }}</td></tr>
+					<tr><th>Area</th><td>{{ shop.area_sq_ft }} sq ft</td></tr>
+					<tr><th>Monthly rent</th><td>{{ shop.get_formatted("rent_amount") }}</td></tr>
+				</table>
+				{% if shop.description %}<p>{{ shop.description }}</p>{% endif %}
+			</section>
+			<footer>
+				{% if shop.status == "Available" %}
+				<a class="button" href="/shop-lead/new?shop={{ shop.name | urlencode }}">I'm interested in renting this shop</a>
+				{% else %}
+				<p>This shop is currently occupied.</p>
+				{% endif %}
+			</footer>
+		</article>
+	</main>
+</body>
+</html>

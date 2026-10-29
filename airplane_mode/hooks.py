@@ -1,3 +1,8 @@
+fixtures = [
+    {"dt": "Airline"},
+    {"dt": "Airplane"},
+    {"dt": "Shop Type", "filters": [["name", "in", ["Stall", "Walk-through", "Normal"]]]},
+]
 app_name = "airplane_mode"
 app_title = "Airplane Mode"
 app_publisher = "yashwanth"
@@ -78,7 +83,7 @@ app_license = "mit"
 # ----------
 
 # automatically create page for each record of this doctype
-# website_generators = ["Web Page"]
+website_generators = ["Airplane Flight"]
 
 # automatically load and sync documents of this doctype from downstream apps
 # importable_doctypes = [doctype_1]
@@ -182,7 +187,16 @@ app_license = "mit"
 # 		"airplane_mode.tasks.monthly"
 # 	],
 # }
-
+scheduler_events = {
+    "daily": [
+        "airplane_mode.airport_shop_management.tasks.expire_contracts"
+    ],
+    "cron": {
+        "0 9 1 * *": [
+            "airplane_mode.airport_shop_management.tasks.send_rent_reminders"
+        ]
+    }
+}
 # Testing
 # -------
 

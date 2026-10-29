@@ -1,0 +1,52 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container mt-4">
+    <h1>Flights</h1>
+
+    {% if flights %}
+        {% for flight in flights %}
+            {% set airline = frappe.db.get_value(
+                "Airplane", flight.airplane, "airline"
+            ) %}
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3>{{ airline or flight.airplane }}</h3>
+
+                    <p>
+                        <strong>From:</strong>
+                        {{ flight.source_airport_code }}
+                        →
+                        <strong>To:</strong>
+                        {{ flight.destination_airport_code }}
+                    </p>
+
+                    <p>
+                        <strong>Date:</strong>
+                        {{ frappe.utils.format_date(
+                            flight.date_of_departure, "d MMMM, YYYY"
+                        ) }}
+                    </p>
+
+                    <p>
+                        <strong>Departure Time:</strong>
+                        {{ flight.time_of_departure }}
+                    </p>
+
+                    <p>
+                        <strong>Duration:</strong>
+                        {{ frappe.utils.format_duration(flight.duration) }}
+                    </p>
+
+                    <a href="/{{ flight.route }}" class="btn btn-primary">
+                        View Flight
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No published flights are available yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

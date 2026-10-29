@@ -1,0 +1,33 @@
+
+<div class="card mb-4">
+    <div class="card-body">
+        {% set airline = frappe.db.get_value("Airplane", doc.airplane, "airline") %}
+
+        <h3>{{ airline or doc.airplane }}</h3>
+
+        <p>
+            <strong>From:</strong> {{ doc.source_airport_code }}
+            →
+            <strong>To:</strong> {{ doc.destination_airport_code }}
+        </p>
+
+        <p>
+            <strong>Date:</strong>
+            {{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }}
+        </p>
+
+        <p>
+            <strong>Departure Time:</strong>
+            {{ doc.time_of_departure }}
+        </p>
+
+        <p>
+            <strong>Duration:</strong>
+            {{ frappe.utils.format_duration(doc.duration) }}
+        </p>
+
+        <a href="/{{ doc.route }}" class="btn btn-primary">
+            View Flight
+        </a>
+    </div>
+</div>

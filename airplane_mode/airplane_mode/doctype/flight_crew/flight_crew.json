@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-10-16 16:45:47.079411",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "flight_crew_details_section",
+  "crew_member_name",
+  "role",
+  "contact_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "crew_member_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Crew Member Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Role",
+   "options": "Pilot\nCo-Pilot\nFlight Attendant\nEngineer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "flight_crew_details_section",
+   "fieldtype": "Section Break",
+   "label": "Flight Crew Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-22 11:12:03.002230",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Flight Crew",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
